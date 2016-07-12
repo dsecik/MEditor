@@ -40,6 +40,7 @@ import javax.inject.Inject;
 
 import com.google.inject.name.Named;
 
+import cz.mzk.editor.server.UserProvider;
 import org.apache.log4j.Logger;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -140,6 +141,9 @@ public class CreateObject {
      */
     private final List<String> ingestedObjects;
 
+    @Inject
+    private UserProvider userProvider;
+
     /**
      * Instantiates a new creates the object.
      *
@@ -197,7 +201,7 @@ public class CreateObject {
                         node.getName(),
                         inputDirPath,
                         node.getUuid(),
-                        false);
+                        false, userProvider.getUserId());
             } catch (DatabaseException e) {
                 LOGGER.error("DB ERROR!!!: " + e.getMessage() + ": " + e);
                 e.printStackTrace();
@@ -321,7 +325,7 @@ public class CreateObject {
                             node.getName(),
                             inputDirPath,
                             node.getUuid(),
-                            false);
+                            false, userProvider.getUserId());
                 } catch (DatabaseException e) {
                     LOGGER.error("DB ERROR!!!: " + e.getMessage() + ": " + e);
                     e.printStackTrace();

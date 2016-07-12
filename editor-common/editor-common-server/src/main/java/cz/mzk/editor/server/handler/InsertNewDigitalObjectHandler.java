@@ -31,6 +31,8 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import com.gwtplatform.dispatch.annotation.In;
+import cz.mzk.editor.server.UserProvider;
 import cz.mzk.editor.server.util.StringUtils;
 import org.apache.log4j.Logger;
 import org.jboss.errai.bus.client.api.base.MessageBuilder;
@@ -97,6 +99,9 @@ public class InsertNewDigitalObjectHandler
 
     private boolean reindexSuccess = false;
 
+    @Inject
+    private UserProvider userProvider;
+
     public InsertNewDigitalObjectHandler() {
         super();
     }
@@ -152,7 +157,7 @@ public class InsertNewDigitalObjectHandler
                                                              createObject.getIngestedObjects(),
                                                              object.getModel().getValue(),
                                                              object.getName(),
-                                                             object.getPath())) {
+                                                             object.getPath(), userProvider.getUserId())) {
                         digitalObjectDAO.deleteDigitalObject(createObject.getTopLevelUuid(),
                                                              null,
                                                              null,

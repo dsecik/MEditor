@@ -91,7 +91,7 @@ public interface DigitalObjectDAO {
                                    String name,
                                    String input_queue_directory_path,
                                    String top_digital_object_uuid,
-                                   boolean state) throws DatabaseException;
+                                   boolean state, Long userId) throws DatabaseException;
 
     /**
      * Update top object time.
@@ -127,7 +127,7 @@ public interface DigitalObjectDAO {
                                 List<String> lowerObj,
                                 String model,
                                 String name,
-                                String input_queue_directory_path) throws DatabaseException;
+                                String input_queue_directory_path, Long userId) throws DatabaseException;
 
     /**
      * Insert do crud action.
