@@ -150,8 +150,8 @@ public class EditorConfigurationImpl
         for (Iterator it = environmentConfiguration.getKeys(); it.hasNext();) {
             String key = (String)it.next();
             String value = environmentConfiguration.getString(key);
-            key.replaceAll("_", ".");
-            key.replaceAll("\\.\\.", "__");
+            key = key.replaceAll("_", ".");
+            key = key.replaceAll("\\.\\.", "__");
             constconf.addProperty(key, value);
         }
     }
@@ -176,3 +176,4 @@ public class EditorConfigurationImpl
     }
 
 }
+
