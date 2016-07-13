@@ -48,11 +48,12 @@ public interface DigitalObjectDAO {
      *        the name
      * @param topObjectUuid
      *        the top object uuid
+     * @param userId
      * @return true, if successful
      * @throws DatabaseException
      *         the database exception
      */
-    boolean deleteDigitalObject(String uuid, String model, String name, String topObjectUuid)
+    boolean deleteDigitalObject(String uuid, String model, String name, String topObjectUuid, Long userId)
             throws DatabaseException;
 
     /**

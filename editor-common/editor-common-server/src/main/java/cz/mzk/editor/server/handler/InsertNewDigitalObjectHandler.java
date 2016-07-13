@@ -161,7 +161,7 @@ public class InsertNewDigitalObjectHandler
                         digitalObjectDAO.deleteDigitalObject(createObject.getTopLevelUuid(),
                                                              null,
                                                              null,
-                                                             createObject.getTopLevelUuid());
+                                                             createObject.getTopLevelUuid(), userProvider.getUserId());
                     }
                 } catch (DatabaseException e) {
                     LOGGER.error("DB ERROR!!!: " + e.getMessage() + ": " + e);

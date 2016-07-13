@@ -78,7 +78,7 @@ public class DigitalObjectDAOImpl
      * {@inheritDoc}
      */
     @Override
-    public boolean deleteDigitalObject(String uuid, String model, String name, String topObjectUuid)
+    public boolean deleteDigitalObject(String uuid, String model, String name, String topObjectUuid, Long userId)
             throws DatabaseException {
         PreparedStatement deleteSt = null;
         boolean successful = false;
@@ -96,7 +96,7 @@ public class DigitalObjectDAOImpl
 
                 if (deleteSt.executeUpdate() == 1) {
                     LOGGER.debug("DB has been updated: The digital object: " + uuid + " has been disabled.");
-                    if (insertCrudActionWithTopObject(getUserId(false),
+                    if (insertCrudActionWithTopObject(userId,
                                                       Constants.TABLE_CRUD_DO_ACTION_WITH_TOP_OBJECT,
                                                       "digital_object_uuid",
                                                       uuid,
@@ -149,7 +149,7 @@ public class DigitalObjectDAOImpl
             if (daoUtils.checkDigitalObject(pid, model, name, null, DAOUtilsImpl
                     .directoryPathToRightFormat(input_queue_directory_path), state, false))
 
-                if (insertCrudActionWithTopObject(getUserId(false),
+                if (insertCrudActionWithTopObject(userId,
                                                   Constants.TABLE_CRUD_DO_ACTION_WITH_TOP_OBJECT,
                                                   "digital_object_uuid",
                                                   pid,
