@@ -141,7 +141,6 @@ public class CreateObject {
      */
     private final List<String> ingestedObjects;
 
-    @Inject
     private UserProvider userProvider;
 
     /**
@@ -158,7 +157,8 @@ public class CreateObject {
                         final EditorConfiguration config,
                         final DigitalObjectDAO digitalObjectDAO,
                         final ImageResolverDAO imageResolverDAO,
-                        final @Named("securedFedoraAccess") FedoraAccess fedoraAccess) {
+                        final @Named("securedFedoraAccess") FedoraAccess fedoraAccess,
+                        final UserProvider userProvider) {
         this.inputDirPath = inputDirPath;
         this.processedPages = new HashMap<String, String>();
         this.processedTracks = new HashMap<String, String>();
@@ -167,6 +167,7 @@ public class CreateObject {
         this.config = config;
         this.digitalObjectDAO = digitalObjectDAO;
         this.imageResolverDAO = imageResolverDAO;
+        this.userProvider = userProvider;
     }
 
     /**

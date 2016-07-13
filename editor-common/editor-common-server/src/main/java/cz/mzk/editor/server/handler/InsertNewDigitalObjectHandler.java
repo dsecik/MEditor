@@ -146,7 +146,7 @@ public class InsertNewDigitalObjectHandler
                                      config,
                                      digitalObjectDAO,
                                      imageResolverDAO,
-                                     fedoraAccess);
+                                     fedoraAccess, userProvider);
             ingestSuccess = createObject.insertAllTheStructureToFOXMLs(object);
 
             if (object.getUuid() != null && createObject.getTopLevelUuid() != null && !createObject.getTopLevelUuid().equals(object.getUuid())) {
