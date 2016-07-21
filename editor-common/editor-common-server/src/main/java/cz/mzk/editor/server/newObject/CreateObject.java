@@ -316,7 +316,7 @@ public class CreateObject {
 
         if (node.getUuid() == null || attempt != Constants.MAX_NUMBER_OF_INGEST_ATTEMPTS) {
 
-            node.setUuid(Constants.FEDORA_UUID_PREFIX + FoxmlUtils.getRandomUuid());
+            node.setUuid(FoxmlUtils.getRandomUuid());
 
             if (topLevelUuid == null) {
                 topLevelUuid = node.getUuid();
