@@ -12,3 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - this changelog
 - Simple build script
+
+## [1.0.2] - 16-9-2016
+
+### Fixed
+- https://github.com/moravianlibrary/MEditor/issues/90
