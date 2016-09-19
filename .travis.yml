@@ -12,9 +12,9 @@ script:
   - cp target/meditor.war dockerfile/meditor/
   - docker build -t moravianlibrary/meditor dockerfile/meditor
 
-after_success:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push moravianlibrary/meditor
+#after_success:
+#  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+#  - docker push moravianlibrary/meditor
 
 notifications:
   email: false

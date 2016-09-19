@@ -3,7 +3,7 @@
 VERSION=$1
 
 if [[ -z "$VERSION" ]]; then
-    echo "no version specified"
+    echo "Error: no version of Docker image specified"
     exit 1
 fi
 
