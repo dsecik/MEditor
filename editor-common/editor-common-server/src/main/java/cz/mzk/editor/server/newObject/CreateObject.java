@@ -376,16 +376,7 @@ public class CreateObject {
                 }
                 url = "http://" + url;
             }
-            if (!isSysno(sysno)) {
-                imageUrl =
-                        url + "meditor" + getPathFromNonSysno(sysno)
-                                + (internal ? node.getPath() : node.getUuid());
-                if (!internal) {
-                    newFilePath =
-                            addSlash(config.getImageServerUnknown()) + getPathFromNonSysno(sysno)
-                                    + node.getUuid();
-                }
-            } else {
+            if (isSysno(sysno)) {
                 String basePath = "";
                 if (base != null && !"".equals(base)) {
                     basePath = base.toLowerCase() + "/";
@@ -395,6 +386,15 @@ public class CreateObject {
                 if (!internal) {
                     newFilePath =
                             addSlash(config.getImageServerKnown()) + basePath + getSysnoPath(sysno)
+                                    + node.getUuid();
+                }
+            } else {
+                imageUrl =
+                        url + "meditor" + getPathFromNonSysno(sysno)
+                                + (internal ? node.getPath() : node.getUuid());
+                if (!internal) {
+                    newFilePath =
+                            addSlash(config.getImageServerUnknown()) + getPathFromNonSysno(sysno)
                                     + node.getUuid();
                 }
             }
@@ -411,14 +411,7 @@ public class CreateObject {
             }
             String soundUrl;
 
-            if (!isSysno(sysno)) {
-                soundUrl =
-                        url + "meditor" + getPathFromNonSysno(sysno)
-                                + (node.getUuid());
-                newFilePath =
-                        addSlash(config.getRecordingServerUnknown()) + getPathFromNonSysno(sysno)
-                                + node.getUuid();
-            } else {
+            if (isSysno(sysno)) {
                 String basePath = "";
                 if (base != null && !"".equals(base)) {
                     basePath = base.toLowerCase() + "/";
@@ -427,6 +420,13 @@ public class CreateObject {
                         addSlash(config.getRecordingServerKnown()) + basePath + getSysnoPath(sysno)
                                 + node.getUuid();
                 soundUrl = url + basePath + getSysnoPath(sysno) + (node.getUuid());
+            } else {
+                soundUrl =
+                        url + "meditor" + getPathFromNonSysno(sysno)
+                                + (node.getUuid());
+                newFilePath =
+                        addSlash(config.getRecordingServerUnknown()) + getPathFromNonSysno(sysno)
+                                + node.getUuid();
             }
 
             //No lossless audio on the input queue
@@ -878,6 +878,7 @@ public class CreateObject {
      * @return true, if is sysno
      */
     private boolean isSysno(String sysno) {
+        sysno = sysno.replaceFirst("^mzk03", "");
         return sysno != null && sysno.length() == 9;
     }
 
