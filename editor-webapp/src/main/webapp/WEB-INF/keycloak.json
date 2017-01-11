@@ -1,8 +1,8 @@
 {
   "realm" : "meditor",
   "resource" : "meditor",
-  "realm-public-key" : "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgV4B7x/ee9Qgeg+KXo2rRKblTxpnRYdnL8OhmopO81W968eTHRzYRiCJZDuvRAP/XlVRA7jrnUrDgZ8XkiTZnaOh3yC+CvdPePfU0FY+kwzrfBC9EmC5qHLHM4pl4GPcjyhesMOeFyKS03tqIZ9S3vGz5Pocz/lwXD+VaekQcRaKoLqjReuKCiIZe0dkrP2tqsYE1T/pI/69pKLtwAM86vDYoCsAT/Xt7nrMCsxe+847ofsqIq/VXxGUOEuKLPvQ9D6wOGnGtlTRBW/23Nw+ro3mXsIveqglvY4u6JSJpJn1tP/ficj1PL6vW/LQ6nc2yAjS+3BREYyuRNHCutf47wIDAQAB",
-  "auth-server-url" : "http://localhost:8080/auth/",
+  "realm-public-key" : "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0r2ANpM/mvsOuobeQVBUALYbocEs1TrYYNXk6bD3Er8yJuK/JBeGT76ZM+HkYPNw19jF5AvHwRMVikNbBdHQPxjMk1yJpoPim7pMZs0GRIg3U2j8rpaAl1Ph12Y1hiW84KLKp4WKj//YhlRlyqi3fODaUYUl+KT8hT0yaoEYVeCEZIR+MFMg3DSMjwKkwG+XjaXoYkiBykGdkLVkHbrbX+lBEwyPj6B5qLzbn3iBC5BeLz8k80H+u7fTHAS9dmNGcBXeQaMFZ3dqoKgcwXevCjhNh+OmMUYoMYsCnDzMgU7hVrkKyfJ6Xqbf+5ICJYTM5t1q5TYqkJU3uOL4AsqLnwIDAQAB",
+  "auth-server-url" : "http://keycloak-kramerius5.oc.infra.mzk.cz/auth/",
 
   "credentials" : {
     "secret" : "password"
