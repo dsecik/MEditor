@@ -2,5 +2,9 @@
   "realm" : "meditor",
   "resource" : "meditor",
   "realm-public-key" : "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0r2ANpM/mvsOuobeQVBUALYbocEs1TrYYNXk6bD3Er8yJuK/JBeGT76ZM+HkYPNw19jF5AvHwRMVikNbBdHQPxjMk1yJpoPim7pMZs0GRIg3U2j8rpaAl1Ph12Y1hiW84KLKp4WKj//YhlRlyqi3fODaUYUl+KT8hT0yaoEYVeCEZIR+MFMg3DSMjwKkwG+XjaXoYkiBykGdkLVkHbrbX+lBEwyPj6B5qLzbn3iBC5BeLz8k80H+u7fTHAS9dmNGcBXeQaMFZ3dqoKgcwXevCjhNh+OmMUYoMYsCnDzMgU7hVrkKyfJ6Xqbf+5ICJYTM5t1q5TYqkJU3uOL4AsqLnwIDAQAB",
-  "auth-server-url" : "http://keycloak-kramerius5.oc.infra.mzk.cz/auth/"
+  "auth-server-url" : "http://keycloak-kramerius5.oc.infra.mzk.cz/auth/",
+  
+  "credentials" : {
+    "secret" : "password"
+    }
 }
