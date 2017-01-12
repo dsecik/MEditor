@@ -146,10 +146,9 @@ public class EditorConfigurationImpl
         constconf.setProperty(ServerConstants.IMAGES_LOCATION, ServerConstants.DEFAULT_IMAGES_LOCATION
                 + hostname + File.separator);
         EnvironmentConfiguration environmentConfiguration = new EnvironmentConfiguration();
-        environmentConfiguration.setDelimiterParsingDisabled(true);
         for (Iterator it = environmentConfiguration.getKeys(); it.hasNext(); ) {
             String key = (String) it.next();
-            String value = environmentConfiguration.getString(key);
+            Object value = environmentConfiguration.getProperty(key);
             key = key.replaceAll("_", ".");
             key = key.replaceAll("\\.\\.", "__");
             constconf.addProperty(key, value);
